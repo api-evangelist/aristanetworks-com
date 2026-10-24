@@ -1,0 +1,56 @@
+generated: '2026-10-23'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 4
+  own: 2
+  other_domain: 2
+  platform: 0
+  roles:
+  - api
+  - other
+  - website
+hosts:
+- host: api.arista.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: arista.com
+  role: api
+  relation: own
+- host: api.aristanetworks.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: aristanetworks.com
+  role: api
+  relation: other-domain
+- host: www.arista.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Website
+  serves:
+  - cdn
+  vendor: fastly
+  registrable_domain: arista.com
+  role: website
+  relation: own
+- host: www.aristanetworks.com
+  found_by:
+  - probed
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: aristanetworks.com
+  role: other
+  relation: other-domain
